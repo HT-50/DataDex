@@ -15,6 +15,24 @@ img {
     max-width: 100%;
     height: auto;
 }
+/* Avatar img border */
+#user-avatar{
+    width:35px;
+    height:35px;
+    border-radius:50%;
+    object-fit:cover;
+    cursor:pointer;
+    border:3px solid rgb(175,0,0);
+    box-shadow:0 0 8px rgba(175,0,0,.25);
+    transition:.2s;
+    transform:scale(1.1);
+}
+#user-avatar:hover{
+    transform:scale(1.12);
+    box-shadow:
+        0 0 12px rgba(175,0,0,.45),
+        0 0 20px rgba(175,0,0,.25);
+}
 /* Navbar css */
 .navbar {
     background-color: #ffffff;
