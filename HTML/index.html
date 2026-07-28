@@ -8,18 +8,40 @@
     <!-- These scripts power the chatbox and Pokémon list. -->
     <script src="../Javascript/Chatbox.js" defer></script>
     <script src="../Javascript/Library.js" defer></script>
+    <script src="../Javascript/AuthSystem.js"></script>
 </head>
 <body>
     <!-- Navbar -->
     <nav class="navbar">
-        <div>
-            <h1 style="margin-right: 10px;">DataDex</h1>
-        </div>
-        <div style="margin-left: auto;">
-            <a class="nav-btn" style="font-size: 13.3333px; margin-right: 10px;" href="Favourites.html">Favourites</a>
-            <button class="nav-btn">Log In</button>
+        <div><h1 style="margin-right:10px;">DataDex</h1></div>
+        <div style="margin-left:auto;display:flex;align-items:center;gap:10px;">
+            <a class="nav-btn" href="Favourites.html" style="font-size: 13.3333px;">Favourites</a>
+            <!-- Show before login -->
+            <div id="nav-auth-controls">
+                <button id="loginBtn" class="nav-btn" onclick="openAuthModal('login')">Log In</button>
+            </div>
+            <!-- Show after login -->
+            <div id="nav-user-profile" style="display:none;align-items:center;gap:10px;">
+                <img id="user-avatar" src="../Image/default-avatar.png" alt="Avatar" title="Change Avatar" onclick="document.getElementById('avatarPicker').click()" style="width:35px;height:35px;border-radius:50%;object-fit:cover;cursor:pointer;">
+                <input id="avatarPicker" type="file" accept="image/*" style="display:none;">
+                <span id="nav-username"></span>
+                <button class="nav-btn" onclick="logoutUser()">Log Out</button>
+            </div>
         </div>
     </nav>
+    <!-- Authentication Modal -->
+    <div id="auth-modal" class="auth-modal" style="display:none;">
+        <div class="auth-box">
+            <button class="auth-close" onclick="closeAuthModal()">&times;</button>
+            <h2 id="modal-title">Log In</h2>
+            <input id="auth-user" type="text" placeholder="Username">
+            <input id="auth-pass" type="password" placeholder="Password">
+            <input id="auth-confirm-pass" type="password" placeholder="Confirm Password" style="display:none;">
+            <button class="auth-btn" onclick="handleAuth()"> Continue</button>
+            <p id="auth-message" style="color:red;margin-top:10px;"></p>
+            <p id="auth-switch-text" style="margin-top:15px;">Don't have an account?<a href="#" onclick="openAuthModal('signup');return false;">Create One</a></p>
+        </div>
+    </div>
     <br><br><br><br>
 
     <!-- Fixed button and window for the Pokémon assistant. -->

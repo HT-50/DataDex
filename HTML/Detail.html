@@ -9,16 +9,38 @@
 <body>
     <!-- Navbar -->
     <nav class="navbar">
-        <div>
-            <h1 style="margin-right: 10px;">DataDex</h1>
-        </div>
-        <div style="margin-left: auto;">
-            <a class="nav-btn" href="index.html" style="font-size: 13.3333px; margin-right: 10px;">← Back to DataDex</a>
-            <a class="nav-btn" style="font-size: 13.3333px; margin-right: 10px;">Favourites</a>
-            <button class="nav-btn">Log In</button>
+        <div><h1 style="margin-right:10px;">DataDex</h1></div>
+        <div style="margin-left:auto;display:flex;align-items:center;gap:10px;">
+            <a class="nav-btn" href="Favourites.html" style="font-size: 13.3333px;">Favourites</a>
+            <a class="nav-btn" href="index.html" style="font-size: 13.3333px;">← Back to DataDex</a>
+            <!-- Show before login -->
+            <div id="nav-auth-controls">
+                <button id="loginBtn" class="nav-btn" onclick="openAuthModal('login')">Log In</button>
+            </div>
+            <!-- Show after login -->
+            <div id="nav-user-profile" style="display:none;align-items:center;gap:10px;">
+                <img id="user-avatar" src="../Image/default-avatar.png" alt="Avatar" title="Change Avatar" onclick="document.getElementById('avatarPicker').click()" style="width:35px;height:35px;border-radius:50%;object-fit:cover;cursor:pointer;">
+                <input id="avatarPicker" type="file" accept="image/*" style="display:none;">
+                <span id="nav-username"></span>
+                <button class="nav-btn" onclick="logoutUser()">Log Out</button>
+            </div>
         </div>
     </nav>
+    <!-- Authentication Modal -->
+    <div id="auth-modal" class="auth-modal" style="display:none;">
+        <div class="auth-box">
+            <button class="auth-close" onclick="closeAuthModal()">&times;</button>
+            <h2 id="modal-title">Log In</h2>
+            <input id="auth-user" type="text" placeholder="Username">
+            <input id="auth-pass" type="password" placeholder="Password">
+            <input id="auth-confirm-pass" type="password" placeholder="Confirm Password" style="display:none;">
+            <button class="auth-btn" onclick="handleAuth()"> Continue</button>
+            <p id="auth-message" style="color:red;margin-top:10px;"></p>
+            <p id="auth-switch-text" style="margin-top:15px;">Don't have an account?<a href="#" onclick="openAuthModal('signup');return false;">Create One</a></p>
+        </div>
+    </div>
     <br><br><br><br>
+
     <!-- JavaScript fills these elements with the selected Pokémon's data. -->
     <main class="detail-card">
         <div class="detail-image"><img id="image" alt=""></div>
@@ -39,6 +61,21 @@
             <div id="stats"></div>
         </div>
     </main>
+    
+    <!-- Fixed button and window for the Pokémon assistant. -->
+    <button id="chatbox_btn" type="button">💬</button>
+    <div id="chatbox" class="chatbox">
+        <div class="chatbox-header">
+            <h3>Chat with DataDex</h3>
+            <button id="close_chatbox" type="button">Close</button>
+        </div>
+        <div id="chatbox_messages"></div>
+        <div class="chatbox-input">
+            <input type="text" id="chatbox_input" placeholder="Type your message...">
+            <button id="send_message" type="button">Send</button>
+        </div>
+    </div>
+
     <!-- Site footer with community and creator links. -->
     <footer class="site-footer">
         <!-- Feature -->
@@ -65,6 +102,7 @@
                 </p>
             </div>
         </div>
+        <br><br><br><br>
         <!-- Main footer -->
         <div class="footer-main" style="transform: translateY(-75px);">
             <div class="footer-brand">
@@ -94,7 +132,10 @@
             </div>
         </div>
     </footer>
+    
     <!-- Script -->
     <script src="../Javascript/PokemonDetail.js"></script>
+    <script src="../Javascript/AuthSystem.js"></script>
+    <script src="../Javascript/Chatbox.js"></script>
 </body>
 </html>

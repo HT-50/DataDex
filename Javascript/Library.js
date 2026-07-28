@@ -156,8 +156,9 @@ async function getPokemon(nameOrUrl) {
     }
 }
 
-function renderCard(data) {
-    return `
+function renderCard(data){
+    const favourite=isFavourite(data.id);
+    return`
         <div class="pokemon-card" onclick="window.location.href='Detail.html?id=${data.id}'">
             <div class="card-img-wrapper">
                 <img src="${data.sprites.other["official-artwork"].front_default || data.sprites.front_default}" alt="${data.name}">

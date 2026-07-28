@@ -15,6 +15,7 @@ img {
     max-width: 100%;
     height: auto;
 }
+/* Navbar css */
 .navbar {
     background-color: #ffffff;
     padding-left: 20px;
@@ -51,6 +52,151 @@ img {
     transform: translateY(-5px);
     box-shadow: 0 8px 18px rgb(100, 0, 0);
 }
+.nav-right{
+    margin-left:auto;
+    display:flex;
+    gap:10px;
+    align-items:center;
+    font-size: 13.3333px;
+}
+/* Auth modal ui */
+.auth-modal{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    display:none;
+    justify-content:center;
+    align-items:flex-start;
+    padding:20px;
+    padding-top:15vh;
+    background:rgba(0,0,0,.25);
+    backdrop-filter:blur(5px);
+    z-index:9999;
+    animation:authFade .25s ease;
+    box-sizing:border-box;
+}
+.auth-box{
+    width:calc(100% - 40px);
+    max-width:380px;
+    margin-top:80px; /* Adjust this */
+    background:#fff;
+    border:2px solid rgb(175,0,0);
+    border-radius:20px;
+    padding:35px;
+    box-shadow:
+        0 0 15px rgba(150,0,0,.25),
+        0 0 40px rgba(150,0,0,.18);
+    animation:authDrop .35s ease;
+    position:relative;
+    box-sizing:border-box;
+}
+.auth-box h2{
+    margin:0 0 30px;
+    font-size:30px;
+    font-weight:700;
+    text-align:center;
+    color:rgb(175,0,0);
+}
+.auth-close{
+    position:absolute;
+    top:15px;
+    right:18px;
+    border:none;
+    background:none;
+    font-size:28px;
+    cursor:pointer;
+    color:rgb(125,0,0);
+    transition:.2s;
+}
+.auth-close:hover{
+    transform:rotate(90deg);
+}
+.auth-box input{
+    width:100%;
+    padding:14px 16px;
+    margin-bottom:18px;
+    border:none;
+    border-bottom:2px solid #d6d6d6;
+    outline:none;
+    background:transparent;
+    font-size:15px;
+    transition:.25s;
+    box-sizing:border-box;
+}
+.auth-box input:focus{
+    border-bottom:2px solid rgb(175,0,0);
+}
+.auth-btn{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    background:rgb(175,0,0);
+    color:#fff;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.25s;
+}
+.auth-btn:hover{
+    background:rgb(150,0,0);
+    box-shadow:0 0 18px rgba(150,0,0,.4);
+    transform:translateY(-2px);
+}
+#auth-message{
+    margin-top:15px;
+    text-align:center;
+    font-size:14px;
+    color:red;
+    min-height:20px;
+}
+#auth-switch-text{
+    margin-top:22px;
+    text-align:center;
+    font-size:14px;
+    color:#666;
+}
+#auth-switch-text a{
+    text-decoration:none;
+    font-weight:bold;
+    color:rgb(175,0,0);
+    transition:.2s;
+}
+#auth-switch-text a:hover{
+    text-decoration:underline;
+}
+@keyframes authDrop{
+    from{
+        opacity:0;
+        transform:translateY(-40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+@keyframes authFade{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+@media(max-width:500px){
+    .auth-modal{
+        padding:20px;
+        padding-top:70px;
+    }
+    .auth-box{
+        padding:25px;
+    }
+    .auth-box h2{
+        font-size:24px;
+    }
+}
 /* Search page */
 .search-section {
     width: min(100%, 1400px);
@@ -75,9 +221,10 @@ img {
 /* Search btn */
 #searchButton, #showMoreButton {
     border: 0;
-    background: #c81111;
-    color: #fff;
+    background: rgb(175, 0, 0);
+    color: white;
     cursor: pointer;
+    font-weight: 700;
     transition: background 0.2s, transform 0.2s;
 }
 #searchButton {
@@ -398,7 +545,7 @@ img {
     z-index: 1001;
     width: 50px;
     height: 50px;
-    background: #ff0000;
+    background: rgb(175, 0, 0);
     border: 0;
     border-radius: 10px;
     box-shadow: 0 8px 5px rgb(188, 38, 38);
@@ -507,6 +654,34 @@ img {
     background: #fff; 
     border: 1px solid #f0e0e0; 
     border-bottom-left-radius: 4px; 
+}
+/* Favourite css */
+.favourite-btn{
+    position:absolute;
+    top:12px;
+    right:12px;
+    width:42px;
+    height:42px;
+    border:2px solid rgb(175,0,0);
+    border-radius:10px;
+    background:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    font-size:22px;
+    transition:.2s;
+    box-shadow:0 0 10px rgba(175,0,0,.18);
+}
+.favourite-btn:hover{
+    transform:scale(1.08);
+    box-shadow:
+        0 0 12px rgba(175,0,0,.35),
+        0 0 22px rgba(175,0,0,.2);
+}
+.favourite-btn.active{
+    background:rgb(175,0,0);
+    color:#fff;
 }
 /* Reponsive for cards in when use phone */
 /* Not good for under 200px phone */

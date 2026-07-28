@@ -1,6 +1,6 @@
 // Chatbox controls and messages for the DataDex assistant.
 
-const API_KEY = "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";
+const API_KEY = "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";
 
 let chatButton;
 let chatWindow;
