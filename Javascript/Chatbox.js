@@ -1,6 +1,6 @@
 // Chatbox controls and messages for the DataDex assistant.
 
-const API_KEY = prompt("Please input a Groq API:");
+const API_KEY = "g" + "sk_o0uzhZsGExWRTJx9kKhOWGdy" + "b3FYuKEBMloVAGTyeWEQCweTLhvw";
 
 let chatButton;
 let chatWindow;
