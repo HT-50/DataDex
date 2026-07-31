@@ -1,4 +1,4 @@
-# PokéBot & DataDex
+# DataDex
 
 An interactive Pokémon assistant and DataDex application powered by Groq AI. Search Pokémon data, interact with PokéBot, and explore an all-in-one trainer hub!
 
@@ -6,7 +6,7 @@ An interactive Pokémon assistant and DataDex application powered by Groq AI. Se
 
 ## Features
 
-* **PokéBot Assistant:** An AI-powered chatbot that answers Pokémon questions in real time.
+* **Assistant:** An AI-powered chatbot that answers Pokémon questions in real time.
 * **DataDex:** Clean layout for searching and viewing Pokémon stats, types, and info.
 * **Secure API Integration:** Uses interactive browser prompts to keep API keys safe and secure.
 * **Custom Styling:** Modern CSS design featuring dark overlay hero sections and responsive card grids.
