@@ -1,6 +1,4 @@
 // Chatbox controls and messages for the DataDex assistant.
-
-// 1. Paste your NEW Base64 encoded string inside the quotes here:
 const encodedKey = 'Z3NrXzJrMHl0cndzY2pZamhDRWF0TklmV0dkeWIzRll4bDlDd095Z3RnNkt3dkdRYURndGdKNzY=';
 
 let chatButton;
