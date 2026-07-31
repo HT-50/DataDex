@@ -17,8 +17,7 @@ An interactive Pokémon assistant and DataDex application powered by Groq AI. Se
 
 * **HTML5** – Page structure and layout
 * **CSS3** – Responsive grid designs, hero overlays, and custom UI components
-* **JavaScript (ES6)** – PokéBot logic, Groq API fetch handling, and DOM manipulation
-* **Python / Game Maker / Scratch** – Supplemental tools and prototyping logic
+* **JavaScript (ES6)** – ChatBot logic, Groq API fetch handling, and DOM manipulation
 
 ---
 
