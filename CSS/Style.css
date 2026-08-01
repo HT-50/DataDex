@@ -1,7 +1,4 @@
 /* Basic css */
-* {
-    box-sizing: border-box;
-}
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -86,7 +83,6 @@ img {
     cursor: pointer;
     transition: background 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
     display: inline-block;
-    min-width: 85px;
     text-align: center;
     text-decoration: none;
 }
@@ -96,12 +92,16 @@ img {
     transform: translateY(-5px);
     box-shadow: 0 8px 18px rgb(100, 0, 0);
 }
-.nav-right{
-    margin-left:auto;
-    display:flex;
-    gap:10px;
-    align-items:center;
+.nav-right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
     font-size: 13.3333px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scrollbar-width: thin;
 }
 /* Auth modal ui */
 .auth-modal{
